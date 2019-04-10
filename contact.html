@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+{% block abc %}
+		{% with messages = get_flashed_messages() %}
+		 	{% if messages %}
+		  		{% for message in messages %}
+		  			<div class="alert alert-warning alert-dismissible" role="alert">
+		  				{{message}}
+		  			</div>
+		 		{% endfor %}
+			{% endif %}
+		{% endwith %}
+<form action ="/customer" method = "POST">
+<fieldset>
+<h2>fill in your personal data</h2>
+Your Name:<p><input type="text" name ="Name" min="3"/><p>
+Your Email:<p><input type="email" name = "Email" min="7"/></p>
+Your Phone number<p><input type="number" name= "Phonenumber" min="8"></p>
+<p><input type="submit" value="submit"><br>
+	{%for row in R1:%}{{row[0]}}{%endfor%}
+	{%for row in R1:%}{{row[1]}}{%endfor%}
+	{%for row in R1:%}{{row[2]}}{%endfor%}
+</fieldset>
+</form>
+
+{%endblock%}

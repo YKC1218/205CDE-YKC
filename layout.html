@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="owntest.css">
+  <link rel="stylesheet" 
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<title></title>
+</head>
+<body>
+
+
+<!--navbar-->
+<nav class="navbar navbar-expand-sm  bg-light navbar-light">
+	<a class="navbar-brand" href="/index"><img src="/static/LOGO.png" width="100"></a>
+<!--navbar-->
+	<!--toggle button-->
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">		
+		<span class="navbar-toggler-icon"></span>	
+	</button>
+	<!--toggle button-->
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+	<!--links-->
+	<ul class="navbar-nav mr-auto">
+	
+
+		<li class="nav-item">
+			<a class="nav-link" href="/index">Home</a>
+		</li>	
+		<li class="nav-item">			
+			<a class="nav-link" href="/ShoppingCart" >Shopping Cart</a>
+		</li>
+		<li class="nav-item">			
+			<a class="nav-link" href="/addtocart" >Our products</a>
+		</li>								
+			<!--Dropdown-->
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">others</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="/Contactus">
+					Contact US</a>
+					<a class="dropdown-item" href="/Aboutus">About Us</a>
+					
+				</div>
+			</li>
+			</ul>
+			<ul class="navbar-nav ">
+				<li class="nav-item">
+				{% if 'type' in session : %}
+				<a class="nav-link" href="{{session['type']}}" > 
+					{% if 'usern' in session : %}
+						{{session['usern']}}
+					{%else:%}
+						Login
+					{% endif %}</a>
+				{% endif %}
+				</li>				
+				<li class="nav-item">
+					<a class="nav-link" href="/logout">Logout</a>
+				</li>	
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+      		<input class="form-control mr-sm-2" type="text" placeholder="Search">
+      		<button class="btn btn-secondary my-2 my-sm-0" type="submit">
+      		Search</button>
+    		</form>
+		</div>
+</nav>	
+
+{% block abc %}
+{% endblock %}
+	</body>
+
+
+
+</html>

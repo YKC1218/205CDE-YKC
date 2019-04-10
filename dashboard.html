@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{%block abc%}
+
+
+		{% with messages = get_flashed_messages() %}
+		 	{% if messages %}
+		  		{% for message in messages %}
+		  			<div class="alert alert-warning alert-dismissible" role="alert">
+		  				{{message}}
+		  			</div>
+		 		{% endfor %}
+			{% endif %}
+		{% endwith %}
+<form action="/dashboard" method= 'POST'>
+<p>The productname<input type="text" name="productname"></p>
+<p>The productsize<input type="text" name="productsize">
+<p>The productprice<input type="number" name="productprice"></p>
+<p>The productqty<input type="number" name="productqty"></p>
+<p>The productimage<input type="text" name="productimage"></p>
+<input type="submit" value="Add">
+</form>
+
+<form action="/dashboard" method = 'POST' class="show all product"> 
+{%for al12 in products%}
+<p>product id : {{al12[0]}}
+product name : {{al12[1]}}
+{{al12[2]}}
+HKD${{al12[3]}}
+{{al12[4]}}
+{{al12[5]}}
+{{al12[6]}}
+{{al12[7]}}</p>
+
+{%endfor%}
+
+</form>
+
+{%endblock%}
+
