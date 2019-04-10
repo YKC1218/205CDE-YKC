@@ -1,0 +1,13 @@
+.owncover {
+  position: relative;
+}
+
+.topleft{
+  position: absolute;
+  top:25%;
+  font-size: 50px;
+  color: #ff9900;
+  text-transform: capitalize;
+  text-align: left;
+  }
+
